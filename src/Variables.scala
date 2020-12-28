@@ -3,7 +3,7 @@
 object Variables {
   
   /**
-   * Variable Declaration Excercise
+   * Variable Declaration Exercise
    * 
    * <b>o/p of main method</b> 
    * <blockquote>

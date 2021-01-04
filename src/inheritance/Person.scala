@@ -1,4 +1,4 @@
-package classes
+package inheritance
 
 /**
  *  A person class with firstName/lastName members and two parameterized constructors
@@ -11,7 +11,11 @@ class Person(fName: String, lName: String) {
     this(fName, "");
   }
 
-  def display() {
+  def this() {
+    this("", "");
+  }
+
+  def nameInfo() {
     println(s"Person Object : FirstName=[$firstName] LastName=[$lastName]");
   }
 }
@@ -20,10 +24,14 @@ object Person {
   def main(args: Array[String]): Unit = {
     var objectWith2Params = new Person("Bruce", "Banner");
     var objectWith1Param = new Person("Vision");
-    objectWith2Params.display;
-    objectWith1Param.display;
-    println("=> validate getters");
-    printf("firstName=%s",objectWith1Param.firstName);
+    objectWith2Params.nameInfo;
+    objectWith1Param.nameInfo;
+    var employeeObject = new Employee("Thor", "Point Break", 123)
+    var employeeObjectWithDefault = new Employee();
+    var employeeObjectWithEmpId = new Employee(999);
+    employeeObject.nameInfo;
+    employeeObjectWithDefault.nameInfo;
+    employeeObjectWithEmpId.nameInfo;
   }
 }
   

@@ -1,19 +1,29 @@
 package com.vr.calculators
 
-class BasicCalculator(num1: Double, num2: Double) {
-  def add: Double = {
-    return num1 + num2;
+class BasicCalculator() {
+  var internalNum1: Double = 0;
+  var internalNum2: Double = 0;
+
+  def add(defNum1 : Double = this.internalNum1, defNum2 : Double = this.internalNum2): Double = {
+    return defNum1 + defNum2;
   }
 
-  def subtract: Double = {
-    return num1 - num2;
+  def subtract(defNum1 : Double = this.internalNum1, defNum2 : Double = this.internalNum2): Double = {
+    return defNum1 - defNum2;
   }
 
-  def multiply: Double = {
-    return num1 * num2;
+  def multiply(defNum1 : Double = this.internalNum1, defNum2 : Double = this.internalNum2): Double = {
+    return defNum1 * defNum2;
   }
 
-  def divide: Double = {
-    return num1 / num2;
+  def divide(defNum1 : Double = this.internalNum1, defNum2 : Double = this.internalNum2): Double = {
+    return defNum1 / defNum2;
   }
+
+  def this(num1: Double, num2: Double) {
+    this();
+    this.internalNum1 = num1;
+    this.internalNum2 = num2;
+  }
+
 }
